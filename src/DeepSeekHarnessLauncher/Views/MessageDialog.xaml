@@ -1,0 +1,24 @@
+<Window x:Class="DeepSeekHarnessLauncher.Views.MessageDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="DeepSeek Harness Launcher" Width="420" Height="200"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        WindowStyle="None" Background="#000000"
+        ShowInTaskbar="False" FontFamily="Segoe UI">
+    <Border Background="{StaticResource SurfaceBrush}" CornerRadius="16"
+            BorderBrush="{StaticResource CardBorderBrush}" BorderThickness="1" Margin="1">
+        <StackPanel Margin="24">
+            <TextBlock x:Name="TitleText" FontSize="16" FontWeight="Bold"
+                       Foreground="{StaticResource TextPrimaryBrush}"/>
+            <TextBlock x:Name="MessageText" TextWrapping="Wrap" Margin="0,12,0,22"
+                       Foreground="{StaticResource TextSecondaryBrush}" FontSize="13"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="CancelButton" Content="{DynamicResource Btn.Cancel}" Width="90" Padding="0,7"
+                        Margin="0,0,8,0" Style="{StaticResource SecondaryButtonStyle}"
+                        Click="Cancel_Click" Visibility="Collapsed"/>
+                <Button x:Name="OkButton" Content="{DynamicResource Btn.Ok}" Width="90" Padding="0,7"
+                        Click="Ok_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</Window>

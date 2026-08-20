@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>DeepSeekHarnessLauncher</AssemblyName>
+    <RootNamespace>DeepSeekHarnessLauncher</RootNamespace>
+    <!-- 应用图标（exe 图标）使用 logo 转换的 ICO -->
+    <ApplicationIcon>Resources\app.ico</ApplicationIcon>
+    <!-- 发布：完整文件夹（自包含，含 .NET 运行时，非单文件） -->
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>false</PublishSingleFile>
+    <PublishTrimmed>false</PublishTrimmed>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+  </ItemGroup>
+
+  <!-- WPF 与 WinForms 共存：移除 WinForms 的隐式全局 using，避免类型歧义；
+       需要 WinForms 类型（如 NotifyIcon）时在代码中显式 using。 -->
+  <ItemGroup>
+    <Using Remove="System.Windows.Forms" />
+    <Using Remove="System.Drawing" />
+  </ItemGroup>
+
+  <!-- 应用 logo：引用项目外的新 PNG，作为嵌入式资源打包（LogicalName 保持 Assets/logo.png）。 -->
+  <ItemGroup>
+    <Resource Include="..\..\logo\deepseeknew.png">
+      <LogicalName>Assets/logo.png</LogicalName>
+    </Resource>
+  </ItemGroup>
+
+</Project>
