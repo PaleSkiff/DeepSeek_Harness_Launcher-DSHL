@@ -1,5 +1,7 @@
 # DeepSeek Harness Launcher
 
+> [English](README.en.md) | [简体中文](README.md)
+
 一个 Windows 桌面启动器，用于**一键启动、停止、重启和监控 DeepSeek Harness 本地服务**，并提供依赖安装、配置管理、实时日志与系统托盘等配套能力。
 
 > 技术栈：C# / WPF / .NET 8（仅 Windows 10/11 x64）· 纯黑主题 · 支持中英文界面
